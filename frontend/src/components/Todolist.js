@@ -4,7 +4,7 @@ import axios from "axios";
 const TodoList = ({todos, setTodos}) => {
 
   const handleComplete = (todo) => {
-    axios.put(`http://localhost:5000/api/todos/${todo.id}`)
+    axios.put(`/api/todos/${todo.id}`)
       .then(() =>
         setTodos(todos.map(item =>
           item.id === todo.id ? { ...item, completed: true } : item
@@ -13,7 +13,7 @@ const TodoList = ({todos, setTodos}) => {
   };
 
   const handleDelete = ({ id }) => {
-    axios.delete(`http://localhost:5000/api/todos/${id}`)
+    axios.delete(`/api/todos/${id}`)
       .then(() =>
         setTodos(todos.filter(todo => todo.id !== id))
       );

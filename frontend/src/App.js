@@ -10,7 +10,7 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/todos")
+    axios.get("api/todos")
     .then(res => setTodos(res.data))
     .catch(err => console.log(err));
   }, []);

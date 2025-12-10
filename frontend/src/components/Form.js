@@ -12,7 +12,7 @@ const Form = ({ input, setInput, todos, setTodos }) => {
       completed: false
     };
 
-    axios.post("http://localhost:5000/api/todos", newTodo)
+    axios.post("/api/todos", newTodo)
       .then(res => setTodos(res.data));  // backend returns array
 
     setInput("");
